@@ -1,0 +1,90 @@
+[
+    {
+        "label": "pyglet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyglet",
+        "description": "pyglet",
+        "detail": "pyglet",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "importPath": "pyglet",
+        "description": "pyglet",
+        "isExtraImport": true,
+        "detail": "pyglet",
+        "documentation": {}
+    },
+    {
+        "label": "key",
+        "importPath": "pyglet.window",
+        "description": "pyglet.window",
+        "isExtraImport": true,
+        "detail": "pyglet.window",
+        "documentation": {}
+    },
+    {
+        "label": "update",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120\n    if keys[key.D]:\n        player2.x += dt * 120\npyglet.clock.schedule_interval(update, 1/120.0)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "on_draw",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def on_draw():\n    window.clear()\n    player2.draw()\npyglet.app.run()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "window = pyglet.window.Window()\nplayer_left_img = pyglet.image.load('mac_left.png')\nplayer_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player_left_img",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player_left_img = pyglet.image.load('mac_left.png')\nplayer_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player_right_img",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player2",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "keys",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "keys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120\n    if keys[key.D]:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
