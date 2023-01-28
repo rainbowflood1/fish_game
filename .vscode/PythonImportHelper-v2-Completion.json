@@ -1,89 +1,118 @@
 [
     {
-        "label": "pyglet",
+        "label": "arcade",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "pyglet",
-        "description": "pyglet",
-        "detail": "pyglet",
+        "importPath": "arcade",
+        "description": "arcade",
+        "detail": "arcade",
         "documentation": {}
     },
     {
-        "label": "image",
-        "importPath": "pyglet",
-        "description": "pyglet",
-        "isExtraImport": true,
-        "detail": "pyglet",
+        "label": "Player",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING\n        self.textures = []\n        # Load a left facing texture and a right facing texture.\n        # flipped_horizontally=True will mirror the image we load.\n                # Add the screen title\n        texture = arcade.load_texture(\"assets/pictures/mac_left.png\")\n        self.textures.append(texture)",
+        "detail": "main",
         "documentation": {}
     },
     {
-        "label": "key",
-        "importPath": "pyglet.window",
-        "description": "pyglet.window",
-        "isExtraImport": true,
-        "detail": "pyglet.window",
+        "label": "MyGame",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class MyGame(arcade.Window):\n    \"\"\"\n    Main application class.\n    \"\"\"\n    def __init__(self, width, height, title):\n        \"\"\"\n        Initializer\n        \"\"\"\n        arcade.load_font(\"assets/fonts/LuckiestGuy-Regular.ttf\")\n        # Call the parent class initializer",
+        "detail": "main",
         "documentation": {}
     },
     {
-        "label": "update",
+        "label": "main",
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120\n    if keys[key.D]:\n        player2.x += dt * 120\npyglet.clock.schedule_interval(update, 1/120.0)",
+        "peekOfCode": "def main():\n    \"\"\" Main function \"\"\"\n    window = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)\n    window.setup()\n    arcade.run()\nif __name__ == \"__main__\":\n    main()",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "on_draw",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def on_draw():\n    window.clear()\n    player2.draw()\npyglet.app.run()",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "window",
+        "label": "SPRITE_SCALING",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = pyglet.window.Window()\nplayer_left_img = pyglet.image.load('mac_left.png')\nplayer_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:",
+        "peekOfCode": "SPRITE_SCALING = 1\nSCREEN_WIDTH = 1920\nSCREEN_HEIGHT = 1080\nSCREEN_TITLE = \"Fish Game\"\nMOVEMENT_SPEED = 5\nDEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "player_left_img",
+        "label": "SCREEN_WIDTH",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player_left_img = pyglet.image.load('mac_left.png')\nplayer_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120",
+        "peekOfCode": "SCREEN_WIDTH = 1920\nSCREEN_HEIGHT = 1080\nSCREEN_TITLE = \"Fish Game\"\nMOVEMENT_SPEED = 5\nDEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "player_right_img",
+        "label": "SCREEN_HEIGHT",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player_right_img = pyglet.image.load('mac_right.png')\nplayer2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:",
+        "peekOfCode": "SCREEN_HEIGHT = 1080\nSCREEN_TITLE = \"Fish Game\"\nMOVEMENT_SPEED = 5\nDEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "player2",
+        "label": "SCREEN_TITLE",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player2 = pyglet.sprite.Sprite(player_left_img, x=100, y=100)\nkeys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120",
+        "peekOfCode": "SCREEN_TITLE = \"Fish Game\"\nMOVEMENT_SPEED = 5\nDEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "keys",
+        "label": "MOVEMENT_SPEED",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "keys = key.KeyStateHandler()\nwindow.push_handlers(keys)\ndef update(dt):\n    if keys[key.W]:\n        player2.y += dt * 120\n    if keys[key.S]:\n        player2.y += dt * -120\n    if keys[key.A]:\n        player2.x += dt * -120\n    if keys[key.D]:",
+        "peekOfCode": "MOVEMENT_SPEED = 5\nDEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_LINE_HEIGHT",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "DEFAULT_LINE_HEIGHT = 45\nDEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING\n        self.textures = []",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_FONT_SIZE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "DEFAULT_FONT_SIZE = 20\n# Index of textures, first element faces left, second faces right\nTEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING\n        self.textures = []\n        # Load a left facing texture and a right facing texture.",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "TEXTURE_LEFT",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "TEXTURE_LEFT = 0\nTEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING\n        self.textures = []\n        # Load a left facing texture and a right facing texture.\n        # flipped_horizontally=True will mirror the image we load.\n                # Add the screen title",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "TEXTURE_RIGHT",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "TEXTURE_RIGHT = 1\nclass Player(arcade.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.scale = SPRITE_SCALING\n        self.textures = []\n        # Load a left facing texture and a right facing texture.\n        # flipped_horizontally=True will mirror the image we load.\n                # Add the screen title\n        texture = arcade.load_texture(\"assets/pictures/mac_left.png\")",
         "detail": "main",
         "documentation": {}
     }
