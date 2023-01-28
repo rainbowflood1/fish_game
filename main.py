@@ -24,8 +24,6 @@ class Player(arcade.Sprite):
 
         self.textures = []
 
-
-
         # Load a left facing texture and a right facing texture.
 
         # flipped_horizontally=True will mirror the image we load.
@@ -93,6 +91,11 @@ class MyGame(arcade.Window):
         # Set the background color
         arcade.set_background_color(arcade.color.AMAZON)
 
+        self.text_title = arcade.Text(
+            "FISH GAME",120.0,300.0, arcade.color.GREEN, 40, 80, 'center', 
+            font_name="Luckiest Guy"
+        )
+
     def setup(self):
         """ Set up the game and initialize the variables. """
 
@@ -118,8 +121,8 @@ class MyGame(arcade.Window):
                                             SCREEN_WIDTH, SCREEN_HEIGHT,
                                             self.background)
         self.player_sprite_list.draw()
-        arcade.draw_text("FISH GAME",120.0,300.0,
-                         arcade.color.GREEN,40,80,'center', font_name="LuckiestGuy-Regular")
+        self.text_title.draw()
+        
     def on_update(self, delta_time):
         """ Movement and game logic """
 
